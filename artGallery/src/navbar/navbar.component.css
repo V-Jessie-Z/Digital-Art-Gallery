@@ -1,0 +1,19 @@
+nav {
+    height: 80px;
+}
+
+.navbar-brand {
+    font-family: 'Open Sans', sans-serif; /* Changed to Open Sans */
+    font-size: 25px;
+    font-weight: 100; /* Lighter font weight */
+    letter-spacing: 3px;
+}
+
+.navbar-collapse{
+
+    background-color: rgb(071,074,081);
+    font-family: 'Open Sans', sans-serif; /* Changed to Open Sans */
+    font-weight: 100; /* Lighter font weight */
+    letter-spacing: 3px;
+ 
+}

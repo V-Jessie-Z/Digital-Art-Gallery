@@ -1,0 +1,52 @@
+<div class="card-deck">
+    <div 
+      *ngFor="let item of artworks" 
+      class="card" 
+      style="width: 21rem; margin: 10px; display: inline-block;" 
+      (click)="openModal(item)" 
+      data-toggle="modal" 
+      data-target="#artworkModal">
+      
+      <div class="card-img-container">
+        <img class="card-img-top" [src]="item.imgPath" alt="{{item.name}}">
+        <div class="card-overlay">
+          <p class="card-text">{{item.shortDescription}}</p>
+          <small class="text-artist">Artist: {{item.artist}}</small>
+        </div>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{item.name}}</h5>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal -->
+  <div 
+    class="modal fade" 
+    id="artworkModal" 
+    tabindex="-1" 
+    role="dialog" 
+    aria-labelledby="artworkModalCenterTitle" 
+    aria-hidden="true">
+    
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="artworkModalLongTitle">{{selectedArtwork?.name}}</h5>
+       
+        </div>
+        <div class="modal-body">
+          <img 
+            class="img-fluid mb-3" 
+            [src]="selectedArtwork?.imgPath" 
+            alt="{{selectedArtwork?.name}}">
+          <p>{{selectedArtwork?.shortDescription}}</p>
+          <small><strong>Artist:</strong> {{selectedArtwork?.artist}}</small>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+         
+        </div>
+      </div>
+    </div>
+  </div>

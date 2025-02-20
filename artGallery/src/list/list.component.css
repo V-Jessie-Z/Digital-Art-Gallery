@@ -1,0 +1,146 @@
+header {
+    background-color: #641C34;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+    height: 200px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+    animation: slide-down 1.5s ease-out;
+  }
+  
+  /* Animate Header */
+  @keyframes slide-down {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Card Deck Styling */
+  .card-deck {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Card Styling */
+  .card {
+    width: 21rem;
+    margin: 10px;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(135deg, #ffffff, #f5f5f5);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Hover Effect */
+  .card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  /* Image Container Styling */
+  .card-img-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  /* Image Styling */
+  .card-img-top {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+  }
+  
+  .card-img-container:hover .card-img-top {
+    transform: scale(1.2);
+    filter: blur(5px);
+  }
+  
+  /* Overlay Styling */
+  .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .card-img-container:hover .card-overlay {
+    opacity: 1;
+  }
+  
+  /* Overlay Text */
+  .card-text {
+    margin: 0 0 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+    font-size: 1rem;
+   
+  }
+  
+  .text-artist {
+    font-size: 0.9rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    color:azure;
+    animation: fade-in 1s ease-out;
+  }
+  
+  /* Body Styling */
+  .card-body {
+    padding: 15px;
+    letter-spacing: 1px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+  }
+  
+  /* Animation for overlay text */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .card {
+      width: 100%;
+    }
+  }

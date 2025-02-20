@@ -1,0 +1,55 @@
+.flex-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-image: url('https://cdn.pixabay.com/photo/2016/03/27/16/23/woman-1283009_1280.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 533px;
+    overflow: hidden;
+}
+
+.left-welcome {
+    background: linear-gradient(to right, rgb(231, 217, 201), rgba(231, 217, 201, 0));
+    padding: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    color: #333;
+}
+
+.red {
+    background-color: #641C34;
+    height: 300px;
+}
+
+.text{
+    align-items: center;
+    text-align: left;
+    padding-right: 500px;
+    padding-left: 50px;
+}
+
+.btn-light{
+
+    border-radius: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.btn .arrow {
+    display: inline-block;
+    margin-left: 8px;
+    width: 8px;
+    height: 8px;
+    border-left: 2px solid #333; 
+    border-bottom: 2px solid #333;
+    transform: rotate(-45deg); 
+    position: relative;
+    top: -2px;
+}
