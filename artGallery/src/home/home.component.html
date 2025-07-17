@@ -1,26 +1,86 @@
-<section class="welcome">
-    <div class="flex-container">
-       <div class="left-welcome">
-        <div class="text">
-            <p>Indulge in the world of art in the comfort of your own space</p>
-            <br>
-            <div>
-                <button class="btn btn-light">View Art &nbsp; &nbsp; &nbsp;<span class="arrow"></span></button>
-
-               </div>
-        </div>
-     
-       </div>
+<section>
+  <div class="video-wrapper">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgba(71, 74, 81, 0); z-index: 5;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"  aria-expanded="false" aria-label="Toggle navigation" style="background-color: white;">
+      <span class="navbar-toggler-icon" ></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+      <ul class="navbar-nav mr-auto" >
+        &nbsp;  &nbsp;  &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;
+        &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;   &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; 
+        &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;    
+        <li class="nav-item" >
+          <a class="nav-link" href="/home" style="color: azure; font-weight: 100;" >HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/list" style="color: azure; font-weight: 100;" >LIST</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about" style="color: azure; font-weight: 100;" >ABOUT</a>
+      
+        </li>
+      </ul>
     </div>
+</nav>
+      <video autoplay loop muted playsinline preload="auto" >
+  
+      <source src="https://cdn.pixabay.com/video/2020/03/13/33628-397860881_large.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="overlay-text">
+      <h1>Digital Art Gallery</h1>
+      <br>
+      <p>Indulge in the world of art in the comfort of your own space. Browse popular art.</p>
+      <br>
+      <button class="btn btn-primary" (click)="scrollToSection('paragraph')"> <i class="fa-solid fa-chevron-down"></i></button>
+    </div>
+  </div>
 </section>
 
-<section class="red"></section>
+<section class="flex-container1" id="paragraph">
 
-<section>
-    <div>
-        <video width="640" height="360" autoplay loop muted>
-            <source src="https://videos.pexels.com/video-files/1085985/1085985-sd_640_360_25fps.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+    <div class="intro">
+         <p>Step into a world where creativity knows no bounds. Our digital art gallery showcases stunning works from talented artists, bringing imagination to life through vibrant colors and intricate details.
+             Whether you're here to explore, be inspired, or discover your next favorite piece, let the journey begin. 
+         </p>
     </div>
+ 
+</section>
+<div class="carousel">
+  <div class="carousel-container">
+    <div
+      class="card-wrapper"
+      *ngFor="let image of images; let i = index"
+      [ngClass]="{
+        'center': i === currentIndex,
+        'left': i === currentIndex - 1 || (currentIndex === 0 && i === images.length - 1),
+        'right': i === currentIndex + 1 || (currentIndex === images.length - 1 && i === 0)
+      }"
+    >
+    
+      <div class="card">
+        <img [src]="image.src" [alt]="image.title">
+      </div>
+      <p class="painting-title">{{ image.title }}</p>
+      
+    </div>
+
+  </div>
+  <button class="prev" (click)="prevSlide()">&#10094;</button>
+  <button class="next" (click)="nextSlide()">&#10095;</button>
+  
+</div>
+
+<section class="red">
+ <div class="video-wrapper2">
+    <video autoplay loop muted playsinline preload="auto" >
+  
+      <source src="https://cdn.pixabay.com/video/2020/03/13/33628-397860881_large.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="overlay-2">
+ <button class="btn btn-primary" routerLink="/list"><h4 class="blink-glow">Explore a world of digital creativity &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-chevron-right"></i></h4></button>
+ </div>
+ </div>
 </section>

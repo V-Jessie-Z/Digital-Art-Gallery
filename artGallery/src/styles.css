@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+footer{
+
+    background-color: rgb(071,074,081);
+    height: 100px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+    padding-top: 40px;
+    z-index: 5;
+}
+
+@font-face {
+  font-family: 'Relimuss';
+  src: url('assets/fonts/Relimuss-G3M2O.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}

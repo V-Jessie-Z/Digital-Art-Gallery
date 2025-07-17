@@ -1,19 +1,109 @@
 header {
-    background-color: #641C34;
-    background-size: cover;
-    background-position: center;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 100;
-    height: 200px;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
-    animation: slide-down 1.5s ease-out;
-  }
+  background-image: url("https://imgs.search.brave.com/7P1dQs-fvop5SGoqT-8GovoMyb_jWc6GXFmUOJTRMcU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDc0MDA2/MDAuanBn");
+  background-size: cover;
+  background-position: center;
+  font-family: 'Open Sans', sans-serif;
+  height: 200px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* push search to right */
+  padding: 0 20px;
+  position: relative;
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.9);
+  border-radius: 30px;
+  padding: 5px 10px;
+  width: 300px;
+}
+
+body {
+  background-color: #090909;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 1rem;
+  padding: 5px;
+  background: transparent;
+}
+.search-bar button {
+  background: #641C34;
+  border-radius: 50px;
+  cursor: pointer;
+  color: white;
+  font-size: 1.2rem;
+}
+
+
+.filter-row {
+  height: 50px;
+  background: #641C34;
+  display: flex;
+  color:white;
+  align-items: center;
+  padding: 0 20px;
+  font-weight: 100;
+  cursor: pointer;
+  position: relative;
+}
+.filter-row i {
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+
+}
+.filter-options {
+  background:  #641C34;
+  padding: 10px 20px;
+  display: none;
+  flex-wrap: wrap;
+  gap: 20px;
+ 
   
+}
+  
+select {
+  display: flex;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.734);
+  border-radius: 30px;
+  padding: 10px;
+  padding-right: 30px; /* 👈 extra space for the arrow */
+  width: 200px;
+  appearance: none; /* removes default styling in most browsers */
+  -webkit-appearance: none; /* Safari/Chrome */
+  -moz-appearance: none; /* Firefox */
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23641C34" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center; /* 👈 arrow 10px from the right */
+  background-size: 16px;
+  font-weight: 100;
+}
+
+
+
+.filter-options.show {
+  display: flex;
+  
+}
+.filter-row.active i {
+  transform: rotate(90deg); /* arrow rotates */
+}
+
+  
+  body{
+    background-color: #090909;
+  }
+
+  button{
+    background-color: #641C34;
+    color: #f5f3f4;
+  }
   /* Animate Header */
   @keyframes slide-down {
     from {
@@ -30,14 +120,15 @@ header {
   .card-deck {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+      gap: 20px ;
     justify-content: center;
+    margin-bottom: 100px;
   }
   
   /* Card Styling */
   .card {
     width: 21rem;
-    margin: 10px;
+    margin: 0;
     display: inline-block;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
     text-align: center;
@@ -101,7 +192,6 @@ header {
   
   /* Overlay Text */
   .card-text {
-    margin: 0 0 10px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 100;
     font-size: 1rem;
@@ -116,6 +206,13 @@ header {
     letter-spacing: 1px;
     color:azure;
     animation: fade-in 1s ease-out;
+  }
+
+  .artist-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 8px;
   }
   
   /* Body Styling */

@@ -1,19 +1,25 @@
 nav {
-    height: 80px;
+    height: 150px;
+  
+}
+
+h1{
+    margin-left: 30px;
+    margin-bottom: 40px;
 }
 
 .navbar-brand {
-    font-family: 'Open Sans', sans-serif; /* Changed to Open Sans */
+    font-family: URW Chancery L, cursive ;
     font-size: 25px;
-    font-weight: 100; /* Lighter font weight */
+    font-weight: 100;
     letter-spacing: 3px;
 }
 
 .navbar-collapse{
 
     background-color: rgb(071,074,081);
-    font-family: 'Open Sans', sans-serif; /* Changed to Open Sans */
-    font-weight: 100; /* Lighter font weight */
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100; 
     letter-spacing: 3px;
  
 }

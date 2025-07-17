@@ -1,6 +1,95 @@
+
+ <body>
+   <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgba(71, 74, 81, 0); z-index: 5;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"  aria-expanded="false" aria-label="Toggle navigation" style="background-color: white;">
+      <span class="navbar-toggler-icon" ></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+      <ul class="navbar-nav mr-auto" >
+        &nbsp;  &nbsp;  &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;
+        &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;   &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; 
+        &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;    
+        <li class="nav-item" >
+          <a class="nav-link" href="/home" style="color: azure; font-weight: 100;" >HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/list" style="color: azure; font-weight: 100;" >LIST</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about" style="color: azure; font-weight: 100;" >ABOUT</a>
+      
+        </li>
+      </ul>
+    </div>
+</nav>
+  <header>
+  <div class="search-bar">
+    <input type="text"
+           [(ngModel)]="searchQuery"
+           (keyup.enter)="searchArtworks()"
+           placeholder="Search by name or artist..." />
+    <button (click)="searchArtworks()">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
+</header>
+<div class="filter-row" (click)="toggleFilter()" [class.active]="filterVisible">
+  Filter <i class="fa fa-chevron-right"></i>
+</div>
+
+<div class="filter-options" [class.show]="filterVisible">
+  <select [(ngModel)]="searchName">
+      <option value=""><b>Select Artwork Name</b></option>
+      <option value="Mona Lisa">Mona Lisa</option>
+      <option value="Starry Night">Starry Night</option>
+      <option value="The Thinker">The Thinker</option>
+      <option value="The Scream">The Scream</option>
+      <option value="Girl with a Pearl Earring">Girl with a Pearl Earring</option>
+      <option value="The Last Supper">The Last Supper</option>
+      <option value="Guernica">Guernica</option>
+      <option value="The Birth of Venus">The Birth of Venus</option>
+      <option value="The Kiss">The Kiss</option>
+      <option value="The Persistence of Memory">The Persistence of Memory</option>
+  </select>
+  <select [(ngModel)]="searchArtist">
+      <option value="">Select Artist</option>
+      <option value="Leonardo da Vinci">Leonardo da Vinci</option>
+      <option value="Vincent van Gogh">Vincent van Gogh</option>
+      <option value="Auguste Rodin">Auguste Rodin</option>
+      <option value="Edvard Munch">Edvard Munch</option>
+      <option value="Johannes Vermeer">Johannes Vermeer</option>
+      <option value="Pablo Picasso">Pablo Picasso</option>
+      <option value="Sandro Botticelli">Sandro Botticelli</option>
+      <option value="Gustav Klimt">Gustav Klimt</option>
+      <option value="Salvador Dalí">Salvador Dalí</option>
+  </select>
+  <select [(ngModel)]="searchCategory">
+      <option value="">Select Category</option>
+      <option value="Renaissance">Renaissance</option>
+      <option value="Post-Impressionism">Post-Impressionism</option>
+      <option value="Sculpture">Sculpture</option>
+      <option value="Expressionism">Expressionism</option>
+      <option value="Baroque">Baroque</option>
+      <option value="Cubism">Cubism</option>
+      <option value="Surrealism">Surrealism</option>
+      <option value="Symbolism">Symbolism</option>
+  </select>
+  <select [(ngModel)]="searchType">
+      <option value="">Select Type</option>
+      <option value="Painting">Painting</option>
+      <option value="Sculpture">Sculpture</option>
+      <option value="Drawing">Drawing</option>
+  </select>
+  <button class="btn btn-light" (click)="filterArtworks()">Submit</button>
+</div>
+
+<br>
+<br>
+ <!--Display card deck with cards displaying information about each artwork-->
 <div class="card-deck">
     <div 
-      *ngFor="let item of artworks" 
+      *ngFor="let item of filteredArtworks" 
       class="card" 
       style="width: 21rem; margin: 10px; display: inline-block;" 
       (click)="openModal(item)" 
@@ -11,7 +100,7 @@
         <img class="card-img-top" [src]="item.imgPath" alt="{{item.name}}">
         <div class="card-overlay">
           <p class="card-text">{{item.shortDescription}}</p>
-          <small class="text-artist">Artist: {{item.artist}}</small>
+          <small class="text-artist">Artist: {{item.artist.name}}</small>
         </div>
       </div>
       <div class="card-body">
@@ -20,7 +109,7 @@
     </div>
   </div>
   
-  <!-- Modal -->
+  <!-- Display Modal of Selected Painting -->
   <div 
     class="modal fade" 
     id="artworkModal" 
@@ -40,8 +129,28 @@
             class="img-fluid mb-3" 
             [src]="selectedArtwork?.imgPath" 
             alt="{{selectedArtwork?.name}}">
-          <p>{{selectedArtwork?.shortDescription}}</p>
-          <small><strong>Artist:</strong> {{selectedArtwork?.artist}}</small>
+          <p>{{selectedArtwork?.description}}</p>
+          <small><strong>Pulbication Date:</strong>
+            {{selectedArtwork?.publicationDate}}
+          </small>
+          <br>
+          <small><strong>Category:</strong>
+            {{selectedArtwork?.category}}
+          </small>
+          <br>
+          <small><strong>Type:</strong>
+            {{selectedArtwork?.type}}
+          </small>
+          <br>
+          <small><strong>Artist:</strong>
+            <br>
+            <img [src]="selectedArtwork?.artist.profileImage" alt="{{selectedArtwork?.artist.name}}" class="artist-img">
+            <a [routerLink]="['/artists', selectedArtwork?.artist.name]" (click)="closeModal()">
+              {{ selectedArtwork?.artist.name }}
+            </a>
+            
+            
+          </small>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -50,3 +159,6 @@
       </div>
     </div>
   </div>
+  <br>
+  <br>
+</body>

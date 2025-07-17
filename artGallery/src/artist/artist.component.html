@@ -1,0 +1,61 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark" style=" z-index: 5;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"  aria-expanded="false" aria-label="Toggle navigation" style="background-color: white;">
+      <span class="navbar-toggler-icon" ></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+      <ul class="navbar-nav mr-auto" >
+        &nbsp;  &nbsp;  &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;
+        &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;   &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; 
+        &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;    
+        <li class="nav-item" >
+          <a class="nav-link" href="/home" style="color: azure; font-weight: 100;" >HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/list" style="color: azure; font-weight: 100;" >LIST</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about" style="color: azure; font-weight: 100;" >ABOUT</a>
+      
+        </li>
+      </ul>
+    </div>
+</nav>
+<div *ngIf="artist; else notFound" class="artist-container">
+    
+    <div class="artist-profile">
+        <br>
+        <br>
+      <img [src]="artist.profileImage" alt="{{ artist.name }}" class="artist-img">
+      <h1 class="artist-name">{{ artist.name }}</h1>
+      <br>
+    </div>
+
+    <div class="bio">
+        <br>
+        <p class="artist-bio">{{ artist.bio }}</p>
+        <br>
+    </div>
+  
+    <section class="artworks-section">
+        <br>
+      <h4>Artworks</h4>
+      <br>
+      <div class="artwork-list">
+        <div *ngFor="let artwork of artist.artworks" class="artwork-card">
+          <img [src]="artwork.imgPath" alt="{{ artwork.name }}" class="artwork-img">
+          <p style="color: black; margin-top: 10px;">{{ artwork.name }}</p>
+        </div>
+      </div>
+      <br>
+      <br>
+    </section>
+      <Br>
+  </div>
+  
+
+  <ng-template #notFound>
+    <p>Artist not found.</p>
+  </ng-template>
+  

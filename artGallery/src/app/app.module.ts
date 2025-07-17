@@ -7,6 +7,9 @@ import { HomeComponent } from '../home/home.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { ListComponent } from '../list/list.component';
 import { AboutComponent } from '../about/about.component';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { ArtistComponent } from '../artist/artist.component';
 
 
 @NgModule({
@@ -16,10 +19,15 @@ import { AboutComponent } from '../about/about.component';
     NavbarComponent,
     ListComponent,
     AboutComponent,
+    ArtistComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule,
+    FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
