@@ -1,6 +1,7 @@
 
  <body>
-   <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgba(71, 74, 81, 0); z-index: 5;">
+  <!--Navbar---->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgba(71, 74, 81, 0); z-index: 5;">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"  aria-expanded="false" aria-label="Toggle navigation" style="background-color: white;">
       <span class="navbar-toggler-icon" ></span>
     </button>
@@ -11,18 +12,20 @@
         &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;   &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; 
         &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;    
         <li class="nav-item" >
-          <a class="nav-link" href="/home" style="color: azure; font-weight: 100;" >HOME</a>
+          <a class="nav-link" routerLink="/home" style="color: azure; font-weight: 100;" >HOME</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/list" style="color: azure; font-weight: 100;" >LIST</a>
+          <a class="nav-link" routerLink="/list" style="color: azure; font-weight: 100;" >LIST</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/about" style="color: azure; font-weight: 100;" >ABOUT</a>
+          <a class="nav-link" routerLink="/about" style="color: azure; font-weight: 100;" >ABOUT</a>
       
         </li>
       </ul>
     </div>
 </nav>
+
+<!--Header with background image + search bar---->
   <header>
   <div class="search-bar">
     <input type="text"
@@ -34,10 +37,13 @@
     </button>
   </div>
 </header>
+
+<!--Filter Function---->
 <div class="filter-row" (click)="toggleFilter()" [class.active]="filterVisible">
   Filter <i class="fa fa-chevron-right"></i>
 </div>
 
+<!--Name of artwork input--->
 <div class="filter-options" [class.show]="filterVisible">
   <select [(ngModel)]="searchName">
       <option value=""><b>Select Artwork Name</b></option>
@@ -52,6 +58,8 @@
       <option value="The Kiss">The Kiss</option>
       <option value="The Persistence of Memory">The Persistence of Memory</option>
   </select>
+
+  <!--Name of artist input---->
   <select [(ngModel)]="searchArtist">
       <option value="">Select Artist</option>
       <option value="Leonardo da Vinci">Leonardo da Vinci</option>
@@ -64,6 +72,8 @@
       <option value="Gustav Klimt">Gustav Klimt</option>
       <option value="Salvador Dalí">Salvador Dalí</option>
   </select>
+
+  <!--Category input---->
   <select [(ngModel)]="searchCategory">
       <option value="">Select Category</option>
       <option value="Renaissance">Renaissance</option>
@@ -75,6 +85,8 @@
       <option value="Surrealism">Surrealism</option>
       <option value="Symbolism">Symbolism</option>
   </select>
+
+  <!--Type input---->
   <select [(ngModel)]="searchType">
       <option value="">Select Type</option>
       <option value="Painting">Painting</option>
@@ -86,6 +98,7 @@
 
 <br>
 <br>
+
  <!--Display card deck with cards displaying information about each artwork-->
 <div class="card-deck">
     <div 

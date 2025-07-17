@@ -1,5 +1,9 @@
+
+<!--Section 1---->
 <section>
   <div class="video-wrapper">
+
+    <!--Navbar---->
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgba(71, 74, 81, 0); z-index: 5;">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"  aria-expanded="false" aria-label="Toggle navigation" style="background-color: white;">
       <span class="navbar-toggler-icon" ></span>
@@ -11,18 +15,20 @@
         &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;   &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; 
         &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;    
         <li class="nav-item" >
-          <a class="nav-link" href="/home" style="color: azure; font-weight: 100;" >HOME</a>
+          <a class="nav-link" routerLink="/home" style="color: azure; font-weight: 100;" >HOME</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/list" style="color: azure; font-weight: 100;" >LIST</a>
+          <a class="nav-link" routerLink="/list" style="color: azure; font-weight: 100;" >LIST</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/about" style="color: azure; font-weight: 100;" >ABOUT</a>
+          <a class="nav-link" routerLink="/about" style="color: azure; font-weight: 100;" >ABOUT</a>
       
         </li>
       </ul>
     </div>
 </nav>
+   
+  <!--Video Background---->
       <video autoplay loop muted playsinline preload="auto" >
   
       <source src="https://cdn.pixabay.com/video/2020/03/13/33628-397860881_large.mp4" type="video/mp4">
@@ -38,14 +44,17 @@
   </div>
 </section>
 
-<section class="flex-container1" id="paragraph">
 
+<!--Section 2---->
+<section class="flex-container1" id="paragraph">
+  <!--Text---->
     <div class="intro">
          <p>Step into a world where creativity knows no bounds. Our digital art gallery showcases stunning works from talented artists, bringing imagination to life through vibrant colors and intricate details.
              Whether you're here to explore, be inspired, or discover your next favorite piece, let the journey begin. 
          </p>
     </div>
- 
+
+  <!--Horizontal Slider/Scroller---->
 </section>
 <div class="carousel">
   <div class="carousel-container">
@@ -72,14 +81,19 @@
   
 </div>
 
+
+<!--Section 3---->
 <section class="red">
  <div class="video-wrapper2">
+
+    <!--Video Background---->
     <video autoplay loop muted playsinline preload="auto" >
   
       <source src="https://cdn.pixabay.com/video/2020/03/13/33628-397860881_large.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <div class="overlay-2">
+        <!--Link to list of artworks---->
  <button class="btn btn-primary" routerLink="/list"><h4 class="blink-glow">Explore a world of digital creativity &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-chevron-right"></i></h4></button>
  </div>
  </div>

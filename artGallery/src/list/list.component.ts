@@ -17,6 +17,7 @@ export class ListComponent {
   filteredArtworks: any[] = [];
   searchedArtworks: any[] = [];
   selectedArtwork: any = null;
+  searchQuery: string = '';
 
 
   //Artwork information 
@@ -242,6 +243,8 @@ export class ListComponent {
   }
 
 
+  //Search Bar function
+
 searchArtworks() {
   const query = this.searchQuery.trim().toLowerCase();
 
@@ -254,6 +257,7 @@ searchArtworks() {
 }
 
 
+//Filter Funtcion 
 
     filterArtworks() {
         const query = this.searchQuery.trim().toLowerCase();
@@ -276,6 +280,13 @@ searchArtworks() {
   }
   
 
+  filterVisible = false;
+
+toggleFilter() {
+  this.filterVisible = !this.filterVisible;
+}
+
+  //Modal functionality
   openModal(item: any) {
     this.selectedArtwork = item; 
   }
@@ -293,13 +304,8 @@ searchArtworks() {
   }
   
 
-  filterVisible = false;
 
-toggleFilter() {
-  this.filterVisible = !this.filterVisible;
-}
 
-searchQuery: string = '';
 
   
 }

@@ -225,10 +225,10 @@ export class ArtistComponent implements OnInit {
 }
   ]
     
-  
 
   constructor(private route: ActivatedRoute) {}
-ngOnInit() {
+  
+  ngOnInit() {
   this.route.paramMap.subscribe(params => {
     const artistName = params.get('name');
     if (artistName) {

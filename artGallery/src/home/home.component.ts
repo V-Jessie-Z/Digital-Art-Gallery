@@ -8,15 +8,7 @@ import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/co
 })
 export class HomeComponent  implements OnInit, OnDestroy {
 
-//Scroll function
-  @ViewChild('seeMoreSection') seeMoreSection!: ElementRef;
 
-  scrollToSeeMore() {
-    const element = document.getElementById('see-more-section');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
 
 //Slider Images
 images = [
@@ -62,6 +54,8 @@ images = [
     this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
   }
 
+
+  //Scroll to section function
   scrollToSection(sectionId: string) {
   const element = document.getElementById(sectionId);
   if (element) {

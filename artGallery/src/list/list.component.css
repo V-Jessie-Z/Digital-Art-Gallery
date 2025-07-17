@@ -7,7 +7,7 @@ header {
   color: black;
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* push search to right */
+  justify-content: flex-end; 
   padding: 0 20px;
   position: relative;
 }
@@ -73,14 +73,14 @@ select {
   background: rgba(255, 255, 255, 0.734);
   border-radius: 30px;
   padding: 10px;
-  padding-right: 30px; /* 👈 extra space for the arrow */
+  padding-right: 30px; 
   width: 200px;
-  appearance: none; /* removes default styling in most browsers */
-  -webkit-appearance: none; /* Safari/Chrome */
-  -moz-appearance: none; /* Firefox */
+  appearance: none; 
+  -webkit-appearance: none;
+  -moz-appearance: none; 
   background-image: url('data:image/svg+xml;utf8,<svg fill="%23641C34" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
   background-repeat: no-repeat;
-  background-position: right 10px center; /* 👈 arrow 10px from the right */
+  background-position: right 10px center; 
   background-size: 16px;
   font-weight: 100;
 }
@@ -92,7 +92,7 @@ select {
   
 }
 .filter-row.active i {
-  transform: rotate(90deg); /* arrow rotates */
+  transform: rotate(90deg); 
 }
 
   
@@ -104,7 +104,7 @@ select {
     background-color: #641C34;
     color: #f5f3f4;
   }
-  /* Animate Header */
+
   @keyframes slide-down {
     from {
       transform: translateY(-100%);
@@ -116,7 +116,7 @@ select {
     }
   }
   
-  /* Card Deck Styling */
+
   .card-deck {
     display: flex;
     flex-wrap: wrap;
@@ -125,7 +125,7 @@ select {
     margin-bottom: 100px;
   }
   
-  /* Card Styling */
+
   .card {
     width: 21rem;
     margin: 0;
@@ -139,21 +139,21 @@ select {
     position: relative;
   }
   
-  /* Hover Effect */
+  
   .card:hover {
     transform: scale(1.08);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     z-index: 1;
   }
   
-  /* Image Container Styling */
+ 
   .card-img-container {
     position: relative;
     width: 100%;
     overflow: hidden;
   }
   
-  /* Image Styling */
+ 
   .card-img-top {
     width: 100%;
     height: 300px;
@@ -166,7 +166,7 @@ select {
     filter: blur(5px);
   }
   
-  /* Overlay Styling */
+
   .card-overlay {
     position: absolute;
     top: 0;
@@ -190,7 +190,7 @@ select {
     opacity: 1;
   }
   
-  /* Overlay Text */
+ 
   .card-text {
     font-family: 'Open Sans', sans-serif;
     font-weight: 100;
@@ -215,7 +215,7 @@ select {
     margin-right: 8px;
   }
   
-  /* Body Styling */
+
   .card-body {
     padding: 15px;
     letter-spacing: 1px;
@@ -223,7 +223,7 @@ select {
     font-weight: 100;
   }
   
-  /* Animation for overlay text */
+
   @keyframes fade-in {
     from {
       opacity: 0;
@@ -235,7 +235,7 @@ select {
     }
   }
   
-  /* Responsive Design */
+
   @media (max-width: 768px) {
     .card {
       width: 100%;
