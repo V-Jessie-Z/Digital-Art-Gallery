@@ -1,82 +1,114 @@
-div{
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 100;
-    
-}    
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  color: #fff;
+  background-color: #000;
+}
+
+
 
 .video-wrapper {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  z-index: -0;
-  height: 100vh; 
+  height: 100vh;
+  z-index: -1;
   overflow: hidden;
 }
 
 .video-wrapper video {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
+}
+
+/* About Box */
+.box {
+  position: relative;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 100px auto 0 auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
 }
 
 
 header {
-    background-color: #11111100;
-    color: #f9f7f7;
-    padding: 2rem 1rem;
-    margin-top: 600px;
+  background-color: transparent;
+  color: #f9f7f7;
+  padding: 1rem;
+  text-align: center;
+}
 
+header h2 {
+  font-size: 2.5rem;
+  font-weight: 100;
+  margin-bottom: 1rem;
+}
+
+
+section h2 {
+  color: #fdfdfd;
+  font-weight: 100;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.3rem;
+}
+
+
+.highlight {
+  background-color: #ffffffb4;
+  border-left: 4px solid #641C34;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin: 1rem 0;
+  color: #000;
+  border-radius: 8px;
+}
+
+
+ul {
+  font-weight: 100;
+  padding-left: 1.5rem;
+}
+
+li {
+  font-weight: 100;
+  margin-bottom: 0.5rem;
+}
+
+
+a {
+  font-weight: 100;
+  text-decoration: none;
+}
+
+
+@media (max-width: 768px) {
+  header h2 {
+    font-size: 2rem;
   }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
+  .navbar-nav {
+    flex-direction: column;
+    text-align: center;
   }
 
-
-  section {
-    margin-bottom: 2.5rem;
+  .navbar-nav .nav-link {
+    margin: 0.5rem 0;
   }
 
-  section h2 {
-    color: #fdfdfd;
-    margin-bottom: 1rem;
-    font-size: 1.8rem;
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 0.3rem;
+  .box {
+    margin: 150px 1rem 1rem 1rem;
+    padding: 1.5rem;
   }
-
-  ul {
-    padding-left: 1.5rem;
-  }
-
-  li {
-    margin-bottom: 0.5rem;
-  }
-
-  .highlight {
-    background-color: #ffffffb4;
-    border-left: 4px solid  #641C34;
-    padding: 1rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    margin: 1rem 0;
-  }
-
- .box{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 20px;
- }
-
-  @media (max-width: 600px) {
-    header h1 {
-      font-size: 2rem;
-    }
-  }
-
-.navbar{
-    background-color: #33333300;
-    position:absolute;
-    align-items: center;
 }
